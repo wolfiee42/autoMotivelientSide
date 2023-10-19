@@ -15,6 +15,13 @@ const AddProduct = () => {
         const car = { name, imageurl, price, description, brand };
         console.log(car);
 
+        fetch('http://localhost:5000/cardetails', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(car)
+        })
         form.reset();
     }
 
