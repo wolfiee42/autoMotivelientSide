@@ -12,6 +12,7 @@ import Register from './Components/Register.jsx';
 import AddProduct from './AddProduct.jsx';
 import MyCart from './MyCart.jsx';
 import Authprovide from './Provider/Authprovide.jsx';
+import BrandedCars from './Components/BrandedCars.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/cartsection',
         element: <MyCart></MyCart>
+      },
+      {
+        path: '/brandedcar',
+        element: <BrandedCars></BrandedCars>
       },
     ]
   },
