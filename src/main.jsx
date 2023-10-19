@@ -11,6 +11,7 @@ import Login from './Components/Login.jsx';
 import Register from './Components/Register.jsx';
 import AddProduct from './AddProduct.jsx';
 import MyCart from './MyCart.jsx';
+import Authprovide from './Provider/Authprovide.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('brand.json')
       },
       {
         path: '/login',
@@ -43,6 +45,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Authprovide>
+      <RouterProvider router={router} />
+    </Authprovide>
   </React.StrictMode>,
 )

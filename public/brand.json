@@ -1,28 +1,28 @@
 {
     "carBrands": [
         {
-            "name": "Aurora Motors",
-            "logoUrl": "https://example.com/aurora-motors-logo.png"
+            "name": "BMW Motors",
+            "logoUrl": "https://i.ibb.co/LtQS0Rq/bmwLogo.png"
         },
         {
-            "name": "Prestige Auto",
-            "logoUrl": "https://example.com/prestige-auto-logo.png"
+            "name": "Ford Motor Company",
+            "logoUrl": "https://i.ibb.co/C5Ss33w/fordLogo.png"
         },
         {
-            "name": "NexGen Drive",
-            "logoUrl": "https://example.com/nexgen-drive-logo.png"
+            "name": "Toyota",
+            "logoUrl": "https://i.ibb.co/7rLq32g/toyota-Logo.png"
         },
         {
-            "name": "Velocity Wheels",
-            "logoUrl": "https://example.com/velocity-wheels-logo.png"
+            "name": "Mercedes-Benz",
+            "logoUrl": "https://i.ibb.co/P9gm7jn/merzLogo.png"
         },
         {
-            "name": "EcoDrive",
-            "logoUrl": "https://example.com/ecodrive-logo.png"
+            "name": "Tesla",
+            "logoUrl": "https://i.ibb.co/HXh9Zwr/tesla-Logo.png"
         },
         {
-            "name": "Supreme Autos",
-            "logoUrl": "https://example.com/supreme-autos-logo.png"
+            "name": "Honda Motor Company",
+            "logoUrl": "https://i.ibb.co/ngws1J6/honda-Logo.png"
         }
     ]
 }
