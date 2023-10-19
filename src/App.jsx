@@ -7,7 +7,6 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <h1 className='text-xl text-center'>Wolfie AutoMotive</h1>
       <Outlet></Outlet>
     </>
   )

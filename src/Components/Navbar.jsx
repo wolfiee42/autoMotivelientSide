@@ -2,14 +2,14 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const links = <>
-        <li><NavLink className="text-base font-semibold text-white" to={'/'}>Home</NavLink></li>
-        <li><NavLink className="text-base font-semibold text-white" to={'/addproduct'}>Add Product</NavLink></li>
-        <li><NavLink className="text-base font-semibold text-white" to={'/cartsection'}>My cart</NavLink></li>
-        <li><NavLink className="text-base font-semibold text-white" to={'/login'}>Login</NavLink></li>
-        <li><NavLink className="text-base font-semibold text-white" to={'/register'}>Register</NavLink></li>
+        <li><NavLink className="text-base font-semibold text-black" to={'/'}>Home</NavLink></li>
+        <li><NavLink className="text-base font-semibold text-black" to={'/addproduct'}>Add Product</NavLink></li>
+        <li><NavLink className="text-base font-semibold text-black" to={'/cartsection'}>My cart</NavLink></li>
+        <li><NavLink className="text-base font-semibold text-black" to={'/login'}>Login</NavLink></li>
+        <li><NavLink className="text-base font-semibold text-black" to={'/register'}>Register</NavLink></li>
     </>
     return (
-        <div className="bg-[#0096FF]">
+        <div className="bg-gray-300">
             <div className="navbar max-w-7xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
