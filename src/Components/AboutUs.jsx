@@ -1,6 +1,6 @@
 const AboutUs = () => {
     return (
-        <div className="bg-gray-300">
+        <div className="bg-black text-white">
             <div className="flex py-10 max-w-7xl mx-auto gap-5 flex-row-reverse">
                 <div>
                     <img className="rounded-lg" src="https://i.ibb.co/M2PtR9m/aboutUs.jpg" alt="" />
