@@ -9,7 +9,7 @@ const Navbar = () => {
         <li><NavLink className="text-base font-semibold text-black" to={'/register'}>Register</NavLink></li>
     </>
     return (
-        <div className="bg-gray-300">
+        <div className="bg-gray-300 font-mono">
             <div className="navbar max-w-7xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
