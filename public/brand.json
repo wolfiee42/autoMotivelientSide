@@ -1,0 +1,28 @@
+{
+    "carBrands": [
+        {
+            "name": "Aurora Motors",
+            "logoUrl": "https://example.com/aurora-motors-logo.png"
+        },
+        {
+            "name": "Prestige Auto",
+            "logoUrl": "https://example.com/prestige-auto-logo.png"
+        },
+        {
+            "name": "NexGen Drive",
+            "logoUrl": "https://example.com/nexgen-drive-logo.png"
+        },
+        {
+            "name": "Velocity Wheels",
+            "logoUrl": "https://example.com/velocity-wheels-logo.png"
+        },
+        {
+            "name": "EcoDrive",
+            "logoUrl": "https://example.com/ecodrive-logo.png"
+        },
+        {
+            "name": "Supreme Autos",
+            "logoUrl": "https://example.com/supreme-autos-logo.png"
+        }
+    ]
+}
