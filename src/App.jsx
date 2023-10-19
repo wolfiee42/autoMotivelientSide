@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <h1>Vite + React</h1>
+      <h1 className='text-xl text-center'>Wolfie AutoMotive</h1>
     </>
   )
 }
