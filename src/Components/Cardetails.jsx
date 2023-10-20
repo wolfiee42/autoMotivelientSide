@@ -1,16 +1,22 @@
 import { useLoaderData } from "react-router-dom";
-import { saveItems } from "../utilities/utilities";
 import toast, { Toaster } from "react-hot-toast";
 
 const Cardetails = () => {
     const carDetails = useLoaderData();
-    const { _id, brand, name, imageurl, price, description } = carDetails
-
-    const handleAddToCart = (_id) => {
+    console.log(carDetails);
+    
+    const handleAddToCart = () => {
         toast.success('Successfully Added!')
-        saveItems(_id)
+        fetch('http://localhost:5000/productdetails', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(carDetails)
+        })
     }
-
+    
+    const { brand, name, imageurl, price, description } = carDetails
 
     return (
         <div className="card card-side flex-col lg:flex-row bg-base-100 shadow-xl font-mono">
@@ -20,7 +26,7 @@ const Cardetails = () => {
                 <p className="text-lg font-semibold">{brand}</p>
                 <p><span className="uppercase font-semibold">description : </span>  {description}</p>
                 <p className="uppercase font-bold">Price: ${price}</p>
-                <button onClick={() => handleAddToCart(_id)} className="btn w-full bg-gray-700 hover:bg-gray-400 hover:text-black text-white">Add to cart</button>
+                <button onClick={handleAddToCart} className="btn w-full bg-gray-700 hover:bg-gray-400 hover:text-black text-white">Add to cart</button>
             </div>
             <Toaster position="bottom-center"
                 reverseOrder={false} />
