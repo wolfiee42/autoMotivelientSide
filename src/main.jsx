@@ -16,11 +16,13 @@ import BrandCarInfo from './Components/brandCarInfo.jsx';
 import Cardetails from './Components/Cardetails.jsx';
 import UpdateData from './UpdateData.jsx';
 import PrivateRoute from './Private/PrivateRoute.jsx';
+import ErrorPage from './Components/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',

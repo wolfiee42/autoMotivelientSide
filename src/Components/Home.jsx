@@ -14,6 +14,7 @@ const Home = () => {
             <Brands carBrandsinfo={carBrandsinfo}></Brands>
             <AboutUs></AboutUs>
             <Choose></Choose>
+           
         </div>
     );
 };

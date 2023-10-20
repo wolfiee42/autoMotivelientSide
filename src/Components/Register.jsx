@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/Authprovide";
+import toast, { Toaster } from "react-hot-toast";
 
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, logInByGoogle, updateUser } = useContext(AuthContext);
     const handleRegistration = event => {
         event.preventDefault();
         const form = event.target;
@@ -13,11 +14,24 @@ const Register = () => {
         const image = form.image.value;
         const email = form.email.value;
         const password = form.password.value;
+        const passwordRegex = /.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\\-].*/;
 
-        console.log(name, email, password, image);
+
+        const hasCapitalLetter = /[A-Z]/.test(password);
+        const isValidPassword = passwordRegex.test(password);
+        if (password.length < 6){
+            return toast.error("Password should have atleast 6 characters.")
+        }
+            if (!hasCapitalLetter) {
+                return toast.error("Password should have atleast a capital letter.")
+            }
+        if (!isValidPassword) {
+            return toast.error("Password should have atleast a special character.")
+        }
 
         createUser(email, password)
             .then(result => {
+                updateUser(name, image)
                 console.log(result.user);
             })
             .catch(error => {
@@ -27,11 +41,21 @@ const Register = () => {
         form.reset();
     }
 
+    const hangleGoogle = () => {
+        logInByGoogle()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <div className="hero min-h-screen bg-base-200 pb-20">
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl my-5 font-bold">Register now!</h1>
+                    <h1 className="text-5xl mt-5 font-bold">Register now!</h1>
                 </div>
                 <div className="card flex-shrink-0 w-[500px] max-w-lg shadow-2xl bg-base-100">
                     <form onSubmit={handleRegistration} className="card-body">
@@ -65,16 +89,18 @@ const Register = () => {
                         <div className="form-control mt-6">
                             <button className="btn w-full bg-gray-700 hover:bg-gray-200 hover:text-black text-white">Register</button>
                         </div>
-                        <div className="divider">OR</div>
-                        <div>
-                            <button className="btn w-full bg-gray-700 hover:bg-gray-200 hover:text-black text-white">
-                                <FcGoogle className="text-xl"></FcGoogle>
-                                <span>Google</span>
-                            </button>
-                        </div>
                     </form>
+                    <div className="divider card-body max-w-lg">OR</div>
+                    <div className="w-[440px] mx-auto">
+                        <button onClick={hangleGoogle} className="btn w-full bg-gray-700 hover:bg-gray-200 hover:text-black text-white mb-5">
+                            <FcGoogle className="text-xl"></FcGoogle>
+                            <span>Google</span>
+                        </button>
+                    </div>
                 </div>
             </div>
+            <Toaster position="bottom-center"
+                reverseOrder={false} />
         </div>
     );
 };

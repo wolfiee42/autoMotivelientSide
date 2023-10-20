@@ -4,7 +4,7 @@ import { AuthContext } from "../Provider/Authprovide";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-
+    console.log(user);
     const handlesignout = () => {
         logOut()
             .then(result => {
@@ -18,12 +18,8 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink className="text-base font-semibold text-black" to={'/'}>Home</NavLink></li>
-        {
-            user && <>
-                <li><NavLink className="text-base font-semibold text-black" to={'/addproduct'}>Add Product</NavLink></li>
-                <li><NavLink className="text-base font-semibold text-black" to={'/cartsection'}>My cart</NavLink></li>
-            </>
-        }
+        <li><NavLink className="text-base font-semibold text-black" to={'/addproduct'}>Add Product</NavLink></li>
+        <li><NavLink className="text-base font-semibold text-black" to={'/cartsection'}>My cart</NavLink></li>
         <li><NavLink className="text-base font-semibold text-black" to={'/login'}>Login</NavLink></li>
         <li><NavLink className="text-base font-semibold text-black" to={'/register'}>Register</NavLink></li>
     </>
@@ -48,7 +44,13 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user ? <button onClick={handlesignout} className="btn">Sign Out</button> : <button className="btn">Login</button>
+                        user ? <>
+                            <img className="w-12 h-12 rounded-[50%]" src={user.photoURL} alt="" />
+                            <p className="mx-2 font-semibold">{user.displayName}</p>
+                            <button onClick={handlesignout} className="btn">Sign Out</button>
+                        </>
+                            :
+                            <Link to={'/login'} className="btn">Login</Link>
                     }
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/Authprovide";
+import toast, { Toaster } from "react-hot-toast";
 
 
 const Login = () => {
@@ -22,7 +22,8 @@ const Login = () => {
                 console.log(result.user);
             })
             .catch(error => {
-                console.log(error);
+                console.log(error.message);
+                return toast.error(error.message);
             })
 
 
@@ -57,16 +58,11 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn w-full bg-gray-700 hover:bg-gray-200 hover:text-black text-white">Login</button>
                         </div>
-                        <div className="divider">OR</div>
-                        <div>
-                            <button className="btn w-full bg-gray-700 hover:bg-gray-200 hover:text-black text-white">
-                                <FcGoogle className="text-xl"></FcGoogle>
-                                <span>Google</span>
-                            </button>
-                        </div>
                     </form>
                 </div>
             </div>
+            <Toaster position="bottom-center"
+                reverseOrder={false} />
         </div>
     );
 };
