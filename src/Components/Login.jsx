@@ -33,9 +33,9 @@ const Login = () => {
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl my-5 font-bold">Login now!</h1>
+                    <h1 className="text-2xl lg:text-5xl lg:my-5 font-bold">Login now!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-[500px] max-w-lg shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-[350px] lg:w-[500px] max-w-lg shadow-2xl bg-base-100">
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">

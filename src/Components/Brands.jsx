@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 const Brands = ({ carBrandsinfo }) => {
 
     return (
-        <div className='grid grid-cols-3 bg-white py-10 gap-4'>
+        <div className='grid lg:grid-cols-3 bg-white py-10 gap-4'>
             {
-                carBrandsinfo.map(brands => <>
+                carBrandsinfo.map(brands => <> <div>
                     <Link to={`/${brands.name}`}>
                         <div className="card w-96 mx-auto bg-gray-200 shadow-xl hover:cursor-pointer">
                             <figure><img className='w-[200px] h-[200px] p-4' src={brands.logoUrl} alt={brands.name} /></figure>
@@ -14,7 +14,7 @@ const Brands = ({ carBrandsinfo }) => {
                             </div>
                         </div>
                     </Link>
-                </>)
+                </div></>)
             }
 
         </div>

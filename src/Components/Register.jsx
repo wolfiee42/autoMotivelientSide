@@ -55,9 +55,9 @@ const Register = () => {
         <div className="hero min-h-screen bg-base-200 pb-20">
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl mt-5 font-bold">Register now!</h1>
+                    <h1 className="text-2xl lg:text-5xl lg:mt-5 font-bold">Register now!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-[500px] max-w-lg shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-[350px]  lg:w-[500px] max-w-lg shadow-2xl bg-base-100">
                     <form onSubmit={handleRegistration} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -91,7 +91,7 @@ const Register = () => {
                         </div>
                     </form>
                     <div className="divider card-body max-w-lg">OR</div>
-                    <div className="w-[440px] mx-auto">
+                    <div className="w-[280px] lg:w-[440px] mx-auto">
                         <button onClick={hangleGoogle} className="btn w-full bg-gray-700 hover:bg-gray-200 hover:text-black text-white mb-5">
                             <FcGoogle className="text-xl"></FcGoogle>
                             <span>Google</span>

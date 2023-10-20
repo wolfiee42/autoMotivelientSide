@@ -28,10 +28,10 @@ const AddProduct = () => {
     return (
         <div className="py-10">
             <div className="font-mono max-w-7xl mx-auto">
-                <form onSubmit={handleAddProductBtn} className='shadow-lg p-5 bg-gray-200 glass rounded-lg'>
+                <form onSubmit={handleAddProductBtn} className='shadow-lg p-5 m-5 lg:m-0 bg-gray-200 glass rounded-lg'>
                     <h2 className="text-2xl text-center font-bold">Add Products</h2>
                     {/* rows */}
-                    <div className="flex gap-5">
+                    <div className="flex flex-col lg:flex-row lg:gap-5">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Car Image</span>
@@ -46,7 +46,7 @@ const AddProduct = () => {
                         </div>
                     </div>
                     {/* rows */}
-                    <div className="flex gap-5">
+                    <div className="flex flex-col lg:flex-row lg:gap-5">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Car Brand</span>
@@ -69,7 +69,7 @@ const AddProduct = () => {
                         </div>
                     </div>
                     {/* rows */}
-                    <div className="flex gap-5">
+                    <div className="flex flex-col lg:flex-row lg:gap-5">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">About Car</span>
@@ -87,7 +87,7 @@ const AddProduct = () => {
                         </div>
                     </div>
                     <div className="my-5">
-                        <button type="submit" className="btn w-full bg-gray-700 hover:bg-gray-400 hover:text-black text-white"> Add Product</button>
+                        <button type="submit" className="btn w-full bg-gray-700 hover:bg-gray-200 hover:text-black text-white"> Add Product</button>
                     </div>
                 </form>
             </div>

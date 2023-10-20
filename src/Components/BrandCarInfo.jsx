@@ -3,6 +3,7 @@ import Brandcarinfoo from "./Brandcarinfoo";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { useState } from "react";
 
 const BrandCarInfo = () => {
     const settings = {
@@ -16,10 +17,12 @@ const BrandCarInfo = () => {
         cssEase: "linear"
     };
     const data = useLoaderData();
+    
+    const [item, setitem] = useState(data)
     console.log(data);
     if (data.length < 1) {
         return <div className="max-w-7xl mx-auto my-10">
-            <h2 className="text-3xl font-bold text-center my-3">Why Choose Us</h2>
+            <h2 className="text-xl lg:text-3xl font-bold text-center my-3">Why Choose Us</h2>
             <Slider {...settings}>
                 <div>
                     <img className=" mr-5" src="https://i.ibb.co/fnDVh8t/car-rental-instagram-social-media-post-banner-template-501970-38.jpg" alt="" />
@@ -93,9 +96,9 @@ const BrandCarInfo = () => {
                 <br /><br /><br />
                 <div>
                     <h2 className="text-3xl font-bold text-center">Products</h2>
-                    <div className="grid grid-cols-2 max-w-7xl mx-auto my-10 gap-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto my-10 gap-4">
                         {
-                            data.map(datum => <Brandcarinfoo key={datum._id} datum={datum}></Brandcarinfoo>)
+                            data.map(datum => <Brandcarinfoo  item={item}  setitem={setitem}  key={datum._id} datum={datum}></Brandcarinfoo>)
                         }
                     </div>
                 </div>

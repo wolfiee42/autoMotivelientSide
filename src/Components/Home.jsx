@@ -8,6 +8,7 @@ import Choose from './Choose';
 const Home = () => {
     const brandsInfo = useLoaderData();
     const carBrandsinfo = brandsInfo.carBrands;
+    
     return (
         <div>
             <Banner></Banner>
