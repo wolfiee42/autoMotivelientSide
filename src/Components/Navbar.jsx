@@ -7,7 +7,6 @@ const Navbar = () => {
         <li><NavLink className="text-base font-semibold text-black" to={'/cartsection'}>My cart</NavLink></li>
         <li><NavLink className="text-base font-semibold text-black" to={'/login'}>Login</NavLink></li>
         <li><NavLink className="text-base font-semibold text-black" to={'/register'}>Register</NavLink></li>
-        <li><NavLink className="text-base font-semibold text-black" to={'/brandedcar'}>Cars</NavLink></li>
     </>
     return (
         <div className="bg-gray-300 font-mono">

@@ -12,7 +12,7 @@ import Register from './Components/Register.jsx';
 import AddProduct from './AddProduct.jsx';
 import MyCart from './MyCart.jsx';
 import Authprovide from './Provider/Authprovide.jsx';
-import BrandedCars from './Components/BrandedCars.jsx';
+import BrandCarInfo from './Components/brandCarInfo.jsx';
 
 const router = createBrowserRouter([
   {
@@ -41,8 +41,9 @@ const router = createBrowserRouter([
         element: <MyCart></MyCart>
       },
       {
-        path: '/brandedcar',
-        element: <BrandedCars></BrandedCars>
+        path: '/:name',
+        element: <BrandCarInfo></BrandCarInfo>,
+        loader: ({ params }) => fetch(`http://localhost:5000/cardetails/${params.name}`)
       },
     ]
   },
