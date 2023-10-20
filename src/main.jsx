@@ -14,6 +14,7 @@ import MyCart from './MyCart.jsx';
 import Authprovide from './Provider/Authprovide.jsx';
 import BrandCarInfo from './Components/brandCarInfo.jsx';
 import Cardetails from './Components/Cardetails.jsx';
+import UpdateData from './UpdateData.jsx';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
       {
         path: '/:name/:_id',
         element: <Cardetails></Cardetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/cardetails/${params.name}/${params._id}`)
+      },
+      {
+        path: '/:name/:_id/update',
+        element: <UpdateData></UpdateData>,
         loader: ({ params }) => fetch(`http://localhost:5000/cardetails/${params.name}/${params._id}`)
       },
     ]
