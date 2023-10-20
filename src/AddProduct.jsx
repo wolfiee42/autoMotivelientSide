@@ -13,7 +13,6 @@ const AddProduct = () => {
         const brand = form.brand.value;
 
         const car = { name, imageurl, price, description, brand };
-        console.log(car);
 
         fetch('http://localhost:5000/cardetails', {
             method: "POST",

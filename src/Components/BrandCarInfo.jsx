@@ -6,7 +6,6 @@ import Slider from "react-slick";
 
 const BrandCarInfo = () => {
     const data = useLoaderData();
-    console.log(data);
 
     const settings = {
         dots: true,
@@ -15,7 +14,7 @@ const BrandCarInfo = () => {
         slidesToScroll: 1,
         autoplay: true,
         speed: 2000,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 500,
         cssEase: "linear"
     };
     return (

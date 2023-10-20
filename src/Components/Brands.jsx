@@ -2,10 +2,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 const Brands = ({ carBrandsinfo }) => {
 
-    // const handleCardBtn = brand => {
-//  onClick={() => handleCardBtn(brands.name)}
-    // }
-
     return (
         <div className='grid grid-cols-3 bg-white py-10 gap-4'>
             {

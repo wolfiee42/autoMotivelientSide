@@ -13,6 +13,7 @@ import AddProduct from './AddProduct.jsx';
 import MyCart from './MyCart.jsx';
 import Authprovide from './Provider/Authprovide.jsx';
 import BrandCarInfo from './Components/brandCarInfo.jsx';
+import Cardetails from './Components/Cardetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('brand.json')
+        loader: () => fetch('/brand.json')
       },
       {
         path: '/login',
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
         path: '/:name',
         element: <BrandCarInfo></BrandCarInfo>,
         loader: ({ params }) => fetch(`http://localhost:5000/cardetails/${params.name}`)
+      },
+      {
+        path: '/:name/:_id',
+        element: <Cardetails></Cardetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/cardetails/${params.name}/${params._id}`)
       },
     ]
   },

@@ -1,6 +1,9 @@
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 const Brandcarinfoo = ({ datum }) => {
-    console.log(datum);
-    const { brand, imageurl, name, price } = datum
+    const { _id, brand, imageurl, name, price } = datum;
+
     return (
         <div className="card w-96 mx-auto bg-gray-200 shadow-xl">
             <figure><img className="p-5" src={imageurl} alt={name} /></figure>
@@ -9,11 +12,15 @@ const Brandcarinfoo = ({ datum }) => {
                 <p>Brand: {brand}</p>
                 <p>Price: <span className="font-semibold">${price}</span></p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <Link to={`/${brand}/${_id}`} className="btn w-full bg-gray-700 hover:bg-gray-400 hover:text-black text-white">Details</Link>
                 </div>
             </div>
         </div>
     );
 };
+
+Brandcarinfoo.propTypes = {
+    datum: PropTypes.object,
+}
 
 export default Brandcarinfoo;
