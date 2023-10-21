@@ -20,6 +20,9 @@ const Login = () => {
         logInUser(email, password)
             .then(result => {
                 console.log(result.user);
+                if(result.user){
+                    toast.success('Logged In Successfully!')
+                }
             })
             .catch(error => {
                 console.log(error.message);

@@ -19,12 +19,12 @@ const Register = () => {
 
         const hasCapitalLetter = /[A-Z]/.test(password);
         const isValidPassword = passwordRegex.test(password);
-        if (password.length < 6){
+        if (password.length < 6) {
             return toast.error("Password should have atleast 6 characters.")
         }
-            if (!hasCapitalLetter) {
-                return toast.error("Password should have atleast a capital letter.")
-            }
+        if (!hasCapitalLetter) {
+            return toast.error("Password should have atleast a capital letter.")
+        }
         if (!isValidPassword) {
             return toast.error("Password should have atleast a special character.")
         }
@@ -33,6 +33,9 @@ const Register = () => {
             .then(result => {
                 updateUser(name, image)
                 console.log(result.user);
+                if (result.user) {
+                    toast.success('User Registered Successfully!')
+                }
             })
             .catch(error => {
                 console.log(error);
@@ -44,6 +47,7 @@ const Register = () => {
     const hangleGoogle = () => {
         logInByGoogle()
             .then(result => {
+
                 console.log(result.user);
             })
             .catch(error => {
