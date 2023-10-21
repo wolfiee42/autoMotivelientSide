@@ -1,3 +1,4 @@
+import toast, { Toaster } from "react-hot-toast";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
@@ -20,14 +21,21 @@ const UpdateData = () => {
         const car = { name, imageurl, price, description, brand };
 
         fetch(`http://localhost:5000/cardetails/brand/${_id}`, {
-            method: "PUT", 
+            method: "PUT",
             headers: {
                 "content-type": "application/json",
             },
             body: JSON.stringify(car)
         })
+            .then(res => res.json())
+            .then(data => {
+                const update = data.modifiedCount;
+                if (update) {
+                    toast.success('Information Updated Successfully!')
+                }
+            })
 
-        form.reset();
+
     }
 
     return (
@@ -96,6 +104,8 @@ const UpdateData = () => {
                     </div>
                 </form>
             </div>
+            <Toaster position="bottom-center"
+                reverseOrder={false} />
         </div>
     );
 };
