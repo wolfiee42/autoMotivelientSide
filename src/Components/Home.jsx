@@ -5,14 +5,15 @@ import Brands from './Brands';
 import Choose from './Choose';
 
 
-const Home = () => {
+const Home = ({isDarkMode}) => {
     const brandsInfo = useLoaderData();
     const carBrandsinfo = brandsInfo.carBrands;
     
+
     return (
         <div>
             <Banner></Banner>
-            <Brands carBrandsinfo={carBrandsinfo}></Brands>
+            <Brands isDarkMode={isDarkMode} carBrandsinfo={carBrandsinfo}></Brands>
             <AboutUs></AboutUs>
             <Choose></Choose>
            

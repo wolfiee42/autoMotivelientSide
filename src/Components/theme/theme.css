@@ -1,0 +1,38 @@
+/* Light Theme Styles */
+.light-theme {
+    background-color: #e5e7eb;
+    color: #333333;
+  }
+  
+  .light-theme button {
+    background-color: #374151;
+    color: #ffffff;
+  }
+  .light-theme a{
+    
+    color: #000;
+  }
+  .light-theme a li {
+    background-color: #0074d9;
+    color: #ffffff;
+  }
+  
+  /* Dark Theme Styles */
+  .dark-theme {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  .dark-theme button {
+    background-color: #222222;
+    color: #ffffff;
+  }
+  .dark-theme a {
+    background-color: #222222;
+    color: #ffffff;
+  }
+  .dark-theme a li {
+    background-color: #222222;
+    color: #ffffff;
+  }
+  

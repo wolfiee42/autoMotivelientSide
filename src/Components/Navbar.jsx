@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/Authprovide";
+import './theme/theme.css'
 
-const Navbar = () => {
+
+const Navbar = ({ isDarkMode, toggleTheme }) => {
     const { user, logOut } = useContext(AuthContext);
     console.log(user);
     const handlesignout = () => {
@@ -24,8 +26,8 @@ const Navbar = () => {
         <li><NavLink className="text-base font-semibold text-black" to={'/register'}>Register</NavLink></li>
     </>
     return (
-        <div className="bg-gray-300 font-mono">
-            <div className="navbar max-w-7xl mx-auto">
+        <div className={isDarkMode ? 'dark-theme' : 'light-theme'}>
+            <div className="navbar max-w-7xl mx-auto font-mono">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -52,6 +54,7 @@ const Navbar = () => {
                             :
                             <Link to={'/login'} className="btn">Login</Link>
                     }
+                    <input onClick={toggleTheme} type="checkbox" className="toggle ml-3" />
                 </div>
             </div>
         </div>
