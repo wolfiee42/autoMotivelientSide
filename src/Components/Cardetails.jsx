@@ -7,7 +7,7 @@ const Cardetails = () => {
     
     const handleAddToCart = () => {
         toast.success('Successfully Added!')
-        fetch('https://wolfie-automotive-server-side.vercel.app/productdetails', {
+        fetch('http://localhost:5000/productdetails', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

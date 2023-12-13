@@ -20,7 +20,7 @@ const UpdateData = () => {
 
         const car = { name, imageurl, price, description, brand };
 
-        fetch(`https://wolfie-automotive-server-side.vercel.app/cardetails/brand/${_id}`, {
+        fetch(`http://localhost:5000/cardetails/brand/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

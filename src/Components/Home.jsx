@@ -4,12 +4,14 @@ import Banner from './Banner';
 import Brands from './Brands';
 import Choose from './Choose';
 import ServiceProvided from './ServiceProvided';
+import Mailus from './Mailus';
 
 
-const Home = ({isDarkMode}) => {
+// eslint-disable-next-line react/prop-types
+const Home = ({ isDarkMode }) => {
     const brandsInfo = useLoaderData();
     const carBrandsinfo = brandsInfo.carBrands;
-    
+
 
     return (
         <div>
@@ -18,7 +20,8 @@ const Home = ({isDarkMode}) => {
             <AboutUs></AboutUs>
             <ServiceProvided></ServiceProvided>
             <Choose></Choose>
-           
+            <Mailus />
+
         </div>
     );
 };

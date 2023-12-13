@@ -24,7 +24,7 @@ const MyCart = () => {
                     'Your Product has been deleted.',
                     'success'
                 )
-                fetch(`https://wolfie-automotive-server-side.vercel.app/productdetails/${_id}`, {
+                fetch(`http://localhost:5000/productdetails/${_id}`, {
                     method: "DELETE",
                 })
                 const remaining = products.filter(producty => producty._id !== _id);

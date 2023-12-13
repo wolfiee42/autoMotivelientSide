@@ -14,7 +14,7 @@ const AddProduct = () => {
 
         const car = { name, imageurl, price, description, brand };
 
-        fetch('https://wolfie-automotive-server-side.vercel.app/cardetails', {
+        fetch('http://localhost:5000/cardetails', {
             method: "POST",
             headers: {
                 "content-type": "application/json",

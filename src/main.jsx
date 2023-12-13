@@ -44,22 +44,22 @@ const router = createBrowserRouter([
       {
         path: '/cartsection',
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: () => fetch('https://wolfie-automotive-server-side.vercel.app/productdetails')
+        loader: () => fetch('http://localhost:5000/productdetails')
       },
       {
         path: '/:name',
         element: <PrivateRoute><BrandCarInfo></BrandCarInfo></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://wolfie-automotive-server-side.vercel.app/cardetails/${params.name}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/cardetails/${params.name}`)
       },
       {
         path: '/:name/:_id',
         element: <PrivateRoute><Cardetails></Cardetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://wolfie-automotive-server-side.vercel.app/cardetails/${params.name}/${params._id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/cardetails/${params.name}/${params._id}`)
       },
       {
         path: '/:name/:_id/update',
         element: <PrivateRoute><UpdateData></UpdateData></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://wolfie-automotive-server-side.vercel.app/cardetails/${params.name}/${params._id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/cardetails/${params.name}/${params._id}`)
       },
     ]
   },
